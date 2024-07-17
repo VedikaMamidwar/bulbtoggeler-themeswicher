@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Bulb Toggler and Theme Switcher</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .bulb {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .bulb.on {
+            background-color: yellow;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.7);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bulb" id="bulb"></div>
+    <button onclick="toggleBulb()">Toggle Bulb</button>
+
+    
+    <button onclick="toggleTheme()">Switch Theme</button>
+
+    <script>
+        function toggleBulb() {
+            const bulb = document.getElementById('bulb');
+            bulb.classList.toggle('on');
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
